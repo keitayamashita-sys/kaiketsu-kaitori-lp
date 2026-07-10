@@ -1850,22 +1850,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* ハッシュタグ（求人をご紹介の下） */
     .kv-hashtags {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       align-items: center;
       justify-content: center;
-      gap: 6px 8px;
+      gap: clamp(3px, 1.2vw, 8px);
       margin-top: 16px;
     }
     .kv-hashtag {
       color: #f3e8cb;
-      font-size: 12px;
+      /* 3つを横1列に収めるため、狭い端末では字を縮める */
+      font-size: clamp(9px, 2.7vw, 12px);
       font-weight: 700;
-      letter-spacing: 0.5px;
-      padding: 4px 12px;
+      letter-spacing: 0;
+      padding: 4px clamp(5px, 1.9vw, 12px);
       border: 1px solid rgba(216,183,103,0.55);
       border-radius: 999px;
       background: rgba(255,255,255,0.06);
       white-space: nowrap;
+      flex: 0 0 auto;
     }
     /* キャッチ：稼げるから転職者急増中!! */
     .kv-hero-catch {
